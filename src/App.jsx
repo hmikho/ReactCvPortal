@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 import Home from "./pages/Home";
 import CvData from "./pages/CvData";
@@ -13,7 +13,7 @@ function NotFound() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <Router>  
       <nav>
         <ul>
           <li><Link to="/">CV</Link></li>
@@ -27,9 +27,7 @@ export default function App() {
         <Route path="/projects" element={<Projects />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
-
-
 
