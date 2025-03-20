@@ -4,11 +4,12 @@ export default function CvData() {
   const [cvData, setCvData] = useState(null);
 
   useEffect(() => {
-    fetch("/Cv.json") 
+    fetch(`${process.env.PUBLIC_URL}/Cv.json`)
       .then((response) => response.json())
       .then((data) => setCvData(data))
       .catch((error) => console.error("Error loading CV data:", error));
   }, []);
+  
 
   if (!cvData) return <p>Loading...</p>;
 
